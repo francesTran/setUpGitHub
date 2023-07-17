@@ -10,29 +10,27 @@ import SwiftUI
 struct ContentView: View {
     @State private var aboutMe = false
     var body: some View {
-        ZStack{
-            Color(.systemGray)
-                .ignoresSafeArea()
-            VStack(alignment: .leading, spacing: 20.0) {
-                Text("Hello my name is Frances Tran")
-                    .multilineTextAlignment(.center)
-                Image("camping")
-                    .resizable(resizingMode: .stretch)
-                    .aspectRatio(contentMode: .fit)
-                    .cornerRadius(15)
-                Button(action: {aboutMe.toggle()})
-                {
-                    Text("About me")
-                }
-                if aboutMe {
-                    Text("I enjoy camping, running, drawing, and listening to music. I also like eating CAVA and ice cream.")
-                }
-                font(.title2)
+        
+        VStack(alignment: .leading, spacing: 20.0) {
+            Text("Hello my name is Frances Tran")
+            
+            Image("camping")
+                .resizable(resizingMode: .stretch)
+                .aspectRatio(contentMode: .fit)
+                .cornerRadius(15)
+            Button(action: {aboutMe.toggle()})
+            {
+                Text("About me")
+            }
+            if aboutMe {
+                Text("I enjoy camping, running, drawing, and listening to music. I also like eating CAVA and ice cream.")
+            }
+            font(.title2)
                 .buttonStyle(.borderedProminent)
                 .tint(.blue)
-            }
         }
     }
+    
     
     
     struct ContentView_Previews: PreviewProvider {
